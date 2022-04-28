@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    a {
+      color: #111;
+    }
+
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    /* 컨테이너 */
+    .container {
+      width: 1000px;
+      margin: 0 auto;
+      height: inherit;
+      /* background: rgba(255,255,255,0.3);*/
+    }
+
+    /* 헤더 */
+    header {
+      width: 100%;
+
+      background-color: darkgrey;
+    }
+
+    header ul {
+      padding: 50px;
+    }
+
+    header div {
+      float: left;
+      width: 10%;
+      height: 50px;
+      margin-right: 35%;
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    header div:last-child {
+      margin-right: 0;
+    }
+
+    /* 슬라이드 */
+    .slide {
+      width: 100%;
+      background-color: rgb(244, 62, 62);
+    }
+
+    .icon_l {
+      float: left;
+      width: 100px;
+      height: 100px;
+      margin: 50px 0 50px 30px;
+      background-color: #fff;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .icon_r {
+      float: right;
+      width: 100px;
+      height: 100px;
+      margin: 50px 50px 50px 0;
+      background-color: #fff;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .btn {
+      width: 160px;
+      margin: 0 auto;
+      margin-top: -50px;
+    }
+
+    .btn li {
+      float: left;
+      width: 25px;
+      height: 30px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    /* 컨텐츠1 */
+    .cont {
+      width: 100%;
+      background-color: greenyellow;
+      clear: both;
+      overflow: hidden;
+      /* h1에 마진 적용시킬려면 오버플로우 히든을 써야하는데 이방법이 맞을까여..? */
+    }
+
+    .cont h1 {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 50px;
+      margin-top: 30px;
+    }
+
+    .cont .box {
+      padding: 2% 14% 5%;
+      /* 패딩값 14%를 넘어가면 마지막박스가 밑으로가는데 왜일까여..? */
+      margin: 0 auto;
+      text-align: center;
+      /* 박스 중앙정렬 패딩값으로 계산해서 하는거 맞을까요..? */
+    }
+
+    .cont .box .innerbox {
+      float: left;
+    }
+
+    .cont .box .innerbox div:first-child {
+      width: 150px;
+      height: 180px;
+      border: 1px solid #333;
+      background-color: #fff;
+    }
+
+    .cont .box .innerbox div:last-child {
+      width: 150px;
+      height: 50px;
+      border: 1px solid #333;
+      background-color: #fff;
+    }
+
+    .cont2 {
+      width: 100%;
+      background-color: #fff;
+      padding: 80px;
+    }
+
+    .cont2 div {
+      background-color: mediumorchid;
+      height: 50px;
+      margin-bottom: 20px;
+      line-height: 50px;
+      color: #fff;
+      border: 1px dashed #333;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <ul class="clearfix">
+      <div class="box" id="icon">icon</div>
+      <div class="box" id="logo">logo</div>
+      <div class="box" id="menu">menu</div>
+    </ul>
+  </header>
+  <!-- //header -->
+  <div class="slide">
+    <div class="icon clearfix">
+      <div class="icon_l">icon_l</div>
+      <div class="icon_r">icon_r</div>
+    </div>
+    <!-- //icon -->
+    <div class="btn">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+    <!-- //btn -->
+  </div>
+  <!-- //slide -->
+  <div class="cont">
+    <h1>title</h1>
+    <div class="box clearfix container">
+      <div class="innerbox">
+        <div>img</div>
+        <div>text</div>
+      </div>
+      <div class="innerbox">
+        <div>img</div>
+        <div>text</div>
+      </div>
+      <div class="innerbox">
+        <div>img</div>
+        <div>text</div>
+      </div>
+    </div>
+    <!-- //box -->
+  </div>
+  <!-- //cont -->
+  <div class="cont2">
+    <div>section 태그로 포지션을 넣으면 안됨</div>
+    <div>div에 클래스를 따로 넣었을때만 됨</div>
+    <div>마진과 탑 바텀의 차이</div>
+  </div>
+</body>
+
+</html>
